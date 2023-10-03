@@ -19,30 +19,30 @@ void fenpei(int totalPlayers,int a,int b,int c,int d,int f)
 {
 	std::vector<int> players(totalPlayers);
 	
-	    // ³õÊ¼»¯Íæ¼Ò±àºÅ
+	    // åˆå§‹åŒ–ç©å®¶ç¼–å·
 	    for (int i = 0; i < totalPlayers; i++) {
 	        players[i] = i + 1;
 	    }
 	
-	    // Ëæ»ú´òÂÒÍæ¼Ò±àºÅ
+	    // éšæœºæ‰“ä¹±ç©å®¶ç¼–å·
 	    std::random_shuffle(players.begin(), players.end());
 	    
 }
 void assignRoles(int totalPlayers, RoleAssignment& assignment) {
     
 
-    // Ëæ»ú·ÖÅä½ÇÉ«
-    assignment.werewolves = rand() % (totalPlayers / 3) + 1;// ÀÇÈËÊıÎª×ÜÈËÊıµÄÈı·ÖÖ®Ò»ÒÔÄÚ
-    assignment.seer = rand() % (totalPlayers / 4) + 1;// Ô¤ÑÔ¼ÒÊıÎª×ÜÈËÊıµÄËÄ·ÖÖ®Ò»ÒÔÄÚ
-    assignment.villagers = totalPlayers - assignment.werewolves - assignment.seer - 2; // Ê£ÓàÎª´åÃñ(Ô¤ÁôÁ½¸ö¸øÁÔÈËºÍÅ®Î×)
+    // éšæœºåˆ†é…è§’è‰²
+    assignment.werewolves = rand() % (totalPlayers / 3) + 1;// ç‹¼äººæ•°ä¸ºæ€»äººæ•°çš„ä¸‰åˆ†ä¹‹ä¸€ä»¥å†…
+    assignment.seer = rand() % (totalPlayers / 4) + 1;// é¢„è¨€å®¶æ•°ä¸ºæ€»äººæ•°çš„å››åˆ†ä¹‹ä¸€ä»¥å†…
+    assignment.villagers = totalPlayers - assignment.werewolves - assignment.seer - 2; // å‰©ä½™ä¸ºæ‘æ°‘(é¢„ç•™ä¸¤ä¸ªç»™çŒäººå’Œå¥³å·«)
     assignment.hunter = 1;
     assignment.witch = 1;
-	cout<<"ÅäÖÃ£º"<<endl<<"ÀÇÈË:"<<assignment.werewolves<<endl;
-	cout<<"Ô¤ÑÔ¼Ò:"<<assignment.seer<<endl;
-	cout<<"´åÃñ:"<<assignment.villagers<<endl;
-	cout<<"ÁÔÈË:"<<assignment.hunter<<endl;
-	cout<<"Å®Î×:1"<<endl;
-	cout<<"ÊÇ·ñºÏÊÊ?(y/n)"<<endl;
+	cout<<"é…ç½®ï¼š"<<endl<<"ç‹¼äºº:"<<assignment.werewolves<<endl;
+	cout<<"é¢„è¨€å®¶:"<<assignment.seer<<endl;
+	cout<<"æ‘æ°‘:"<<assignment.villagers<<endl;
+	cout<<"çŒäºº:"<<assignment.hunter<<endl;
+	cout<<"å¥³å·«:1"<<endl;
+	cout<<"æ˜¯å¦åˆé€‚?(y/n)"<<endl;
 	char a;
 	cin>>a;
 	if(a=='y')
@@ -52,7 +52,7 @@ void assignRoles(int totalPlayers, RoleAssignment& assignment) {
 	{
 		system("cls");
 		RoleAssignment assignment;
-		srand(time(0)); // ³õÊ¼»¯Ëæ»úÖÖ×Ó
+		srand(time(0)); // åˆå§‹åŒ–éšæœºç§å­
 		assignRoles(totalPlayers, assignment);
 	}
 	
@@ -60,9 +60,9 @@ void assignRoles(int totalPlayers, RoleAssignment& assignment) {
 
 int main() {
     int totalPlayers;
-    cin>>totalPlayers;//Íæ¼ÒÊıÁ¿
+    cin>>totalPlayers;//ç©å®¶æ•°é‡
     RoleAssignment assignment;
-    srand(time(0)); // ³õÊ¼»¯Ëæ»úÖÖ×Ó
+    srand(time(0)); // åˆå§‹åŒ–éšæœºç§å­
 
     assignRoles(totalPlayers, assignment);
 
